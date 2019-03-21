@@ -1,7 +1,7 @@
 (function(exports) {
 
-function NoteListView(){
-  this.list = new NoteList();
+function NoteListView(list){
+  this.list = list;
 };
 
 NoteListView.prototype.format = function () {

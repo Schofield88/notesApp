@@ -1,5 +1,22 @@
-var element = document.getElementById('app').innerHTML
+//document.getElementById('app').innerHTML = "Howdy"
 
-console.log(element);
+var list = new NoteList
 
-document.getElementById('app').innerHTML = "Howdy"
+var view = new NoteListView(list)
+
+(function (exports) {
+  function NoteController(list){
+    this.list = list
+    var note = new Note("Favourite drink: seltzer")
+    this.list.addNote(note)
+    var view = new NoteListView(this.list)
+  }
+
+  NoteController.prototype = {
+
+    appInsert: function () {
+    document.getElementById('app').innerHTML = view.format  
+    }
+  };
+
+})(this);
