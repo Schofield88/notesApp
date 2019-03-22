@@ -25,19 +25,24 @@ var it = function(nameString, callback){
   try {
     callback()
     var text = "PASS: " + nameString
-     addtext(text, "passColour")
+    var error = ""
+     addtext(text, error, "passColour")
   }catch(err){
-    text = "FAIL: " + nameString + err.stack
-    addtext(text, "failColour")
+    text = "FAIL: " + nameString
+    error = err.stack
+    addtext(text, error, "failColour")
   }
 
   };
 
-var addtext = function(text, passing){
+var addtext = function(text, error, passing){
   var text = document.createTextNode(text)
   var div = document.createElement("div")
   div.setAttribute("class", passing)
   div.append(text)
+  div.append(document.createElement("br"))
+  div.append(document.createElement("br"))
+  div.append(error)
   body.append(div)
   body.append(document.createElement("br"))
 }
