@@ -1,9 +1,14 @@
-body {
-  /* background-color: black; */
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/1/19/%C3%81guila_calva.jpg");
+html {
+  height: 100%;
   color: white;
 }
 
+body {
+  height: 100%;
+  background-image: url('/Users/student/Desktop/dark_angel.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .passColour {
   background-color: green;
 }

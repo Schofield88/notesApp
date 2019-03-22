@@ -1,22 +1,16 @@
-//document.getElementById('app').innerHTML = "Howdy"
+(function(exports) {
+  function NoteController (notelist) {
+    notelist.addNote(new Note("Favourite drink: seltzer"));
+    notelist.addNote(new Note("Dave"));
+    notelist.addNote(new Note("Vaping is awesome."));
+    view = new NoteListView(notelist)
 
-var list = new NoteList
+};
 
-var view = new NoteListView(list)
+NoteController.prototype.viewinsert = function () {
+  output = view.format()
+  document.getElementById("app").innerHTML = output};
 
-(function (exports) {
-  function NoteController(list){
-    this.list = list
-    var note = new Note("Favourite drink: seltzer")
-    this.list.addNote(note)
-    var view = new NoteListView(this.list)
-  }
-
-  NoteController.prototype = {
-
-    appInsert: function () {
-    document.getElementById('app').innerHTML = view.format  
-    }
-  };
+  exports.NoteController = NoteController;
 
 })(this);

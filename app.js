@@ -1,3 +1,4 @@
-var list = new NoteList
+var notelist = new NoteList
 
-var controller = new NoteController(list)
+var controller = new NoteController(notelist)
+controller.viewinsert()
